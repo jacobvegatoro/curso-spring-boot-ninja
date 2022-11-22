@@ -1,0 +1,16 @@
+<!DOCTYPE html SYSTEM "http://www.thymeleaf.org/dtd/xhtml1-strict-thymeleaf-3.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8"/>
+<title>Insert title here</title>
+</head>
+<body>
+	<form action="#" th:action="@{/example3/addperson}" th:object="${person}" method="post">
+	    <p> NAME: <input type="text" th:field="*{name}" /></p> 
+	    <p th:if="${#fields.hasErrors('name')}" th:errors="*{name}">name has error</p> 
+	    <p> AGE: <input type="number" th:field="*{age}" /></p> 
+	    <p th:if="${#fields.hasErrors('age')}" th:errors="*{age}">age has error</p> 
+	    <p> <input type="submit" value="Submit" /></p> 
+	</form>
+</body>
+</html>
